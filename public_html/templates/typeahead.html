@@ -1,0 +1,22 @@
+<div class="input-group" style="display: flex; flex-direction:row">
+	<input class="form-control" data-ng-model="typeaheadCtrl.searchTerms" data-ng-change="typeaheadCtrl.getSuggestions()" data-ng-class="!showSearch ? 'typeahead-end-border' : ''" type="text" name="search" placeholder="Where do you want to go?">
+	<span class="input-group-addon search-icon" data-ng-show="showSearch"><span class="glyphicon glyphicon-search"></span></span>
+
+	<div class="searchBarSuggestionsIdentifier" data-ng-class="suggestTop ? 'searchBarSuggestions-top' : 'searchBarSuggestions'">
+		<ul data-ng-repeat="place in typeaheadCtrl.items">
+			<li typeahead-item="place">{{place.description}}</li>
+		</ul>
+	</div>
+</div>
+<!--
+<div class="input-group" style="display:table;">
+	<input class="form-control" style="display:table-cell; margin-right:-3px;" data-ng-model="typeaheadCtrl.searchTerms" data-ng-change="typeaheadCtrl.getSuggestions()" type="text" name="search" placeholder="Where do you want to go?">
+	<span class="input-group-addon" style="display:table-cell; width:1%; background-color: #fff; padding-left:3px;"><span ng-transclude></span></span>
+
+	<div class="searchBarSuggestions">
+		<ul data-ng-repeat="place in typeaheadCtrl.items">
+			<li typeahead-item="place">{{place.description}}</li>
+		</ul>
+	</div>
+</div>
+-->

@@ -1,0 +1,27 @@
+<div class="homeView">
+	<div class="homeViewContent vertical-center">
+		<div class="container">
+			<span class="title">Travel Monster</span>
+		</div>
+	</div>
+	<div class="homeSearch" data-ng-controller="HomeSearchController as homeSearchCtrl">
+		<div class="container">
+			<form class="form-horizontal" role="search">
+				<div class="form-group">
+					<div class="col-sm-7">
+						<typeahead id="homeViewTypeahead" data-suggest-top="true"></typeahead>
+					</div>
+					<div class="col-sm-2">
+						<input uib-datepicker-popup={{homeSearchCtrl.format}} datepicker-options="homeSearchCtrl.dateOptions" open-on-focus="true" is-open="homeSearchCtrl.startDateOpened" ng-click="homeSearchCtrl.startDateOpen()" class="form-control" type="text" name="startdate" placeholder="Start Date" ng-model="homeSearchCtrl.startDate">
+					</div>
+					<div class="col-sm-2">
+						<input uib-datepicker-popup={{homeSearchCtrl.format}} datepicker-options="homeSearchCtrl.dateOptions" open-on-focus="true" is-open="homeSearchCtrl.endDateOpened" ng-click="homeSearchCtrl.endDateOpen()"class="form-control" type="text" name="enddate" placeholder="End Date" ng-model="homeSearchCtrl.endDate">
+					</div>
+					<div class="col-sm-1">
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span><br>Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,88 @@
+<div class="createTourView" data-ng-controller="CreateTourController as createTourCtrl">
+	<div>
+		<div class="container text-center" data-ng-show="false">
+			<h1>List a tour!</h1>
+			<h3>Create a tour and make it available to hundreds of Travel Monster users.</h3>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="preview" data-ngf-background="createTourCtrl.picture || ' '">
+						<div class="tourText">
+							<div class="pull-left left-text">
+								{{createTourCtrl.name}}<br>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+							</div>
+							<div class="pull-right right-text">
+								<i data-ng-show="createTourCtrl.meals" class="fa fa-cutlery" aria-hidden="true"></i>
+								<i data-ng-show="createTourCtrl.transport" class="fa fa-car" aria-hidden="true"></i><br>
+								Seoul, South Korea
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<form class="form-horizontal" enctype="multipart/form-data" data-ng-submit = "createTourCtrl.createTour(createTourForm, createTourCtrl.picture)" name="createTourForm">
+			<select name="country" class="col-sm-6">
+				<option value="CA">Canada</option>
+				<option value="KR">Korea, Republic of</option>
+				<option value="US">United States</option>
+			</select>
+			<input type="text" class="form-control" data-ng-model="createTourCtrl.name" name="name" required placeholder="Name of your tour">
+			<input type="file" name="picture" ngf-select ng-model="createTourCtrl.picture" name="picture" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="2MB">
+			<textarea class="form-control" data-ng-model="createTourCtrl.description" name="description" required placeholder="Tell us a little about your tour."></textarea>
+
+			<label class="checkbox-inline">
+				<input type="checkbox" data-ng-model="createTourCtrl.transport"> <i class="fa fa-car" aria-hidden="true"></i> Private Transportation
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" data-ng-model="createTourCtrl.meals"> <i class="fa fa-cutlery" aria-hidden="true"></i> Meals
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" data-ng-model="createTourCtrl.licensed"> Licensed
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" data-ng-model="createTourCtrl.depth"> Depth
+			</label>
+
+			<input type="text" class="form-control" data-ng-model="createTourCtrl.price" name="price" required placeholder="Give us a prices for your tour">
+			<input type="text" class="form-control" data-ng-model="createTourCtrl.numofguests" name="numofguests" required placeholder="Enter the maximum number of tourists for this tour.">
+
+			<div class="form-group">
+				<div class="col-sm-6" data-ng-repeat="place in createTourCtrl.places">
+					<div class="place-input">
+						<div class="place-pic"></div>
+						<i class="fa fa-times-circle fa-2x place-close-button" data-ng-click="createTourCtrl.removePlace($index)"></i>
+						<typeahead data-typemodel="place.name" data-submit-ready="createTourCtrl.submit_ready" data-typemodel-details="place.details" data-suggest-top="true"></typeahead>						
+						<!--<span class="fa-stack place-close-button" data-ng-click="createTourCtrl.removePlace($index)">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-times fa-stack-1x fa-inverse"></i>
+						</span>-->
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="place-input-add" data-ng-click="createTourCtrl.addPlace()">
+						<i class="fa fa-plus-circle fa-5x"></i><br>
+						<h3>Add another attraction!</h3>
+					</div>
+				</div>
+			</div>
+
+			<span class="progress" ng-show="createTourCtrl.picture.progress >= 0">
+				<!--<div style="width:{{createTourCtrl.picture.progress}}%" ng-bind="createTourCtrl.picture.progress + '%'"></div>-->
+				<uib-progressbar value="createTourCtrl.picture.progress" class="progress-stripped active" type="success"><b>{{createTourCtrl.picture.progress}}%</b></uib-progressbar>
+			</span>
+
+			<input data-ng-disabled="!createTourCtrl.submit_ready" type="submit" value="Submit">
+		</form>
+	 </div>
+ </div>

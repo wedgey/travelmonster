@@ -1,0 +1,113 @@
+<div class="jumbotron headBanner">
+  <div class="container text-center">
+    <h1>Become a Guide!</h1>
+    <h3>Join hundreds of others as one of our guides.</h3>
+  </div>
+</div>
+
+<div class="container" data-ng-controller="GuidifyFormController as guidCtrl">
+  <form class="form-horizontal" data-ng-submit="guidCtrl.registerGuide()" data-ng-hide="auth.isGuide()">
+    <div class="col-sm-4 hidden-xs">
+      <img class="img-responsive img-rounded profile-pic center-block" src="images/profile_pic.jpeg">
+    </div>
+    <div class="col-sm-8">
+      <div class="form-group">
+        <div class="col-sm-6">
+          <input type="text" class="form-control" data-ng-model="guidCtrl.firstname" name="firstname" required placeholder="First Name">
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" data-ng-model="guidCtrl.lastname" name="lastname" required placeholder="Last Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.email" name="email" required placeholder="E-mail Address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.gender" name="gender" required placeholder="Gender">
+        </div>
+
+        <div class="col-sm-6">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.dateofbirth" name="dateofbirth" required placeholder="Date of Birth">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.city" name="city" required placeholder="What city do you live in?">
+        </div>
+
+        <div class="col-sm-6">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.country" name="country" required placeholder="What country do you live in?">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.mainCity" name="mainCity" required placeholder="Main City">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.subCities" name="subCities" required placeholder="Sub Cities">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.address" name="address" required placeholder="Address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.phone" name="phone" required placeholder="Phone Number">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.mobile" name="mobile" required placeholder="Mobile Number">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.languages" name="languages" required placeholder="Languages you know.">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.company" name="company" required placeholder="Company or Orgnanization">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.info" name="info" required placeholder="info">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input class="form-control" type="text" data-ng-model="guidCtrl.services" name="services" required placeholder="Services offered">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+
+    </div>
+  </form>
+
+  <div class="row text-center" data-ng-show="auth.isGuide()">
+    <h2>You are already one of our guides. Happy guiding!</h2>
+  </div>
+</div>

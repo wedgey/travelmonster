@@ -1,0 +1,59 @@
+<header data-ng-controller="HeaderController as header">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" ng-click="header.navbarCollapsed = !header.navbarCollapsed" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" ui-sref="home"><span class="text-brand">Travel <span class="text-brand-monster">Monster</span></span></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" uib-collapse="header.navbarCollapsed">
+				<ul class="nav navbar-nav navbar-right" data-ng-hide="auth.isLoggedIn()">
+					<li><a ui-sref="guidify">Become a guide!</a></li>
+					<li><a data-ng-click="$event.stopPropagation(); pageCtrl.signupOpen();">Signup</a></li>
+					<li class="dropdown" uib-dropdown auto-close="outsideClick">
+						<a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+						<ul class="dropdown-menu" uib-dropdown-menu>
+							<form name="loginForm" data-ng-controller="LoginFormController as loginFormCtrl" data-ng-submit="loginFormCtrl.login()" novalidate>
+								<li><input data-ng-model="loginFormCtrl.email" type="email" name="email" placeholder="E-mail" required></li>
+								<li><input data-ng-model="loginFormCtrl.password" type="password" name="password" placeholder="Password"></li>
+								<input type="Submit" value="Submit">
+							</form>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" data-ng-show="auth.isLoggedIn()">
+					<li class="dropdown" uib-dropdown>
+						<a href="#" class="dropdown-toggle navbarIcon" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false"><i data-count="{{auth.user.numofunreadmsgs}}" class="fa fa-envelope" data-ng-class="{'faBadge' : (auth.user.numofunreadmsgs > 0)}"></i></a>
+						<ul class="dropdown-menu" uib-dropdown-menu>
+							<li><a href="">{{auth.user.numofunreadmsgs}} Unread Messages</a></li>
+						</ul>
+					</li>
+					<li class="dropdown" uib-dropdown>
+						<a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false" >{{auth.user.firstname}} <i class="fa fa-gear fa-lg"></i></a>
+						<ul class="dropdown-menu" uib-dropdown-menu>
+							<li data-ng-hide="auth.isGuide()"><a ui-sref="guidify">Become a guide!</a></li>
+							<li data-ng-show="auth.isGuide()"><a ui-sref="createtour">Create a tour</a></li>
+							<li><a href="">Account Settings</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="" data-ng-click="auth.logout()">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form" role="search" id="navSearchForm" ng-hide="header.isHome()">
+					<div class="form-group" style="display:inline;">
+						<typeahead data-show-search="true"></typeahead>
+					</div>
+				</form>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+</header>

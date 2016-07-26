@@ -1,0 +1,420 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+* {
+	z-index: 0;
+}
+
+.make-visible {
+	display: block;
+}
+
+.make-invisible {
+	display: none;
+}
+
+.text-brand {
+	font-size: 20px;
+	font-weight: bold;
+	color: #00b8e6;
+}
+
+.text-brand-monster {
+	color: #ffcc00;
+}
+
+header .nav>li:hover {
+	background-color: #f1f1f1;
+}
+
+header .navbar {
+	border-radius: 0;
+	margin-bottom: 1px;
+	z-index: 3;
+}
+
+header .navbar-default {
+	background:rgba(255,255,255,0.5);
+}
+
+
+header .navbar-nav {
+	height: 100%;
+	min-height: 50px;
+}
+
+header .navbar-form {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	min-height: 50px;
+}
+
+header .form-group {
+	height: 100%;
+	display: inline;
+}
+
+typeahead .form-control:focus {
+	border-color: #ccc;
+	box-shadow: none;
+}
+
+typeahead li {
+	cursor: pointer;
+}
+
+typeahead .input-group .input-group-addon.search-icon {
+	border-top-left-radius:0;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:0;
+	border-top: 0;
+	border-bottom: 0;
+	border-left: 0px;
+	background-color: #fff;
+	vertical-align: middle;
+	padding: 0 5px 0 0px;
+	line-height: 50px;
+	text-align: center;
+	min-width: 25px;
+}
+
+typeahead .form-control {
+	height: 100%;
+	min-height: 50px;
+	box-shadow: none;
+	border-radius: 5px;
+	border-right: 0;
+}
+
+typeahead .input-group .form-control.typeahead-end-border {
+	border-right: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+header #navSearchForm {
+	height: 100%;
+}
+
+header .navbar-nav>li>a.navbarIcon {
+	padding: 13px 15px;
+}
+
+header typeahead .form-control {
+	border-bottom: 0;
+	border-top: 0;
+}
+
+typeahead {
+	z-index: 2;
+}
+
+typeahead div.searchBarSuggestions {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+typeahead div.searchBarSuggestions ul {
+	text-align: left;
+	width: 100%;
+	background-color: yellow;
+	list-style-type: none;
+	list-style-position: outside;
+	padding-left: 0;
+	margin: 0;
+}
+
+typeahead div.searchBarSuggestions li {
+	background-color: white;
+	border: 1px #f2f2f2 solid;
+	text-align: left;
+	width: 100%;
+	margin: 0;
+	padding: 0.5em;
+	position: relative;
+}
+
+typeahead div.searchBarSuggestions li.active {
+	background-color: #ccf2ff;
+}
+
+typeahead div.searchBarSuggestions-top {
+	position: absolute;
+	bottom: 50px;
+	top: auto;
+	left: 0;
+	width: 100%;
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+}
+
+typeahead div.searchBarSuggestions-top ul {
+	text-align: left;
+	width: 100%;
+	background-color: yellow;
+	list-style-type: none;
+	list-style-position: outside;
+	padding-left: 0;
+	margin: 0;
+}
+
+typeahead div.searchBarSuggestions-top li {
+	background-color: white;
+	border: 1px #f2f2f2 solid;
+	text-align: left;
+	width: 100%;
+	margin: 0;
+	padding: 0.5em;
+	position: relative;
+}
+
+typeahead div.searchBarSuggestions-top li.active {
+	background-color: #ccf2ff;
+}
+
+nav i.fa {
+	font-size: 1.5em;
+}
+
+.faBadge:after{
+    content: attr(data-count);
+    position: absolute;
+    background: red;
+    height:1.5rem;
+    top: 0.75em;
+    right: 0.75em;
+    min-width:1.5rem;
+    text-align: center;
+    line-height: 1.4rem;
+    font-family: 'Arial';
+    font-size: 1rem;
+    border-radius: 50%;
+    color:white;
+    border:1px solid red;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: calc(100vh - 50px); /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.vertical-center {
+  height:100%;
+  width:100%;
+
+  text-align: center;  /* align the inline(-block) elements horizontally */
+  font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;    /* vertical alignment of the inline element */
+  height: 100%;
+}
+
+.vertical-center > .container {
+  max-width: 100%;
+
+  display: inline-block;
+  vertical-align: middle;  /* vertical alignment of the inline element */
+                           /* reset the font property */
+  font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.homeView {
+	min-height: calc(100vh - 50px);
+}
+
+.homeViewContent {
+	position: absolute;
+	top: 0px;
+	min-height: calc(100vh - 50px);
+	background-image: url("../images/bg1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
+
+.homeView .title {
+	color: white;
+	font-size: 30px;
+}
+
+.homeSearch {
+	position: absolute;
+	width: 100%;
+	bottom: 20%;
+}
+
+.homeView .homeSearch .form-group div {
+	margin: 0;
+	padding: 0;
+}
+
+.homeView .homeSearch .form-group div .form-control {
+	height: 100%;
+	min-height: 50px;
+	box-shadow: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right: 0px;
+}
+
+.homeView .homeSearch .form-group div:not(:first-child) .form-control {
+	height: 100%;
+	min-height: 50px;
+	margin-left: -1px;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+.homeView .form-group div:first-child .input-group .input-group-addon {
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:0;
+	border-left: 0;
+	border-right: 0;
+}
+
+
+.homeView .form-group > div:last-child > button {
+	border-top-left-radius:0;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:0;
+	min-height: 50px;
+	margin-left: -1px;
+	width: 100%;
+	line-height: 15px;
+}
+
+.headBanner {
+	height: 300px;
+	line-height: 250px;
+	background-image: url("../images/bg1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.headBanner {
+	color: white;
+}
+
+.profile-pic {
+	max-height: 180px;
+}
+
+.searchResultsPage .row {
+}
+
+#googleMapCanvas {
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	left: 0;
+	top: 10;
+}
+
+.filters {
+}
+
+div.searchResultsPage div.row div.user-block {
+	background-color: blue;
+}
+
+
+div.createTourView input:not([type=checkbox]) {
+	min-height: 50px;
+	margin-top: 10px;
+}
+
+div.createTourView .row > div {
+	background-color: red;
+}
+
+div.createTourView .row div > div.preview {
+	position: relative;
+	width: 100%;
+	padding-bottom: 50%;
+	background-color: yellow;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+div.createTourView .row div > div.preview .tourText {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 18px;
+	padding: 10px;
+}
+
+div.createTourView .row div > div.preview .tourText > .right-text {
+	text-align: right;
+}
+
+div.createTourView .place-input , div.createTourView .place-input-add {
+	min-height: 180px;
+	background-color: gray;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+div.createTourView .place-input-add {
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+	padding-top: 30px;
+}
+
+div.createTourView .place-input .place-pic {
+	min-height: 120px;
+}
+
+div.createTourView .place-input .place-close-button {
+	position: absolute;
+	right: 7px;
+	top: 0;
+	cursor: pointer;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+  min-height: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+  vertical-align: middle;
+}
